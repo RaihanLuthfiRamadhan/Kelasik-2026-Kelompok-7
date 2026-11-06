@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KELOMPOK 7</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navigasi-Utama">
+            <a class="brand" href="index.html">KELOMPOK 7</a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+            <div class="navbar-link" id="navLinks">
+                <a href="index.html">HOME</a>
+                <a href="team.html">YOUR TEAM</a>
+                <a href="learning.html">LEARNING JOURNEY</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Pratikum WEB KELASIK 2026</h1>
+                <p>Kami merancang dan mengembangkan antarmuka website yang mantap sekali</p>
+                <a href="team.html" class="button">INTRODUCTION MY TEAM</a>
+            </div>
+            <img src="/Assets/img/STT-NF.jpg" alt="" class="hero-img">
+        </section>
+
+        <button type="button" id="helloButton">Click Here</button>
+        <p id="helloResult">Not Text</p>
+    </main>
+    <footer class="footer">
+        &copy;2026 KELOMPOK 7, DIBUAT UNTUK BELAJAR
+    </footer>
+    <script>
+        console.log("Selamat Datang di Website");
+
+        const kelompokAnggota = "Kelompok 7 Kelasik 2026";
+        const jumlahAnggota = 5;
+
+        console.log("di Kelompok =", kelompokAnggota);
+        console.log("Jumlah Anggota Berapa = ", jumlahAnggota);
+
+        const helloButton = document.querySelector("#helloButton");
+        const helloResult = document.querySelector("#helloResult");
+        
+        if (helloButton && helloResult) (
+            helloButton.addEventListener("click", ()=> (
+                helloResult.textContent = "Hello World!"
+            ))
+        )
+
+        const menuButton = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".navbar-link");
+
+        if (menuButton && navLinks) {
+            menuButton.addEventListener("click", ()=> {
+                const isOpen = navLinks.classList.toggle("is-open");
+                menuButton.setAttribute("aria-expanded", String(isOpen));
+            })
+        };
+    </script>
+</body>
+</html>
